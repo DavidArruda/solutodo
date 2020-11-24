@@ -76,6 +76,9 @@ class AppController extends Controller
             //Verifica se action é igual a login
             if(($this->request->getParam(['action']) !== null ) AND ($this->request->getParam(['action']) == 'login')){
                 $this->viewBuilder()->setLayout('login');//carrega o layout de login
+            
+            } else {
+                $this->viewBuilder()->setLayout('admin');//carrega o layout admin
             }
         }
     }
