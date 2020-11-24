@@ -63,6 +63,7 @@ class AppController extends Controller
         //$this->loadComponent('Csrf');
     }
 
+    //this method execute before render page
     public function beforeRender(Event $event)
     {
         $prefix = null;
