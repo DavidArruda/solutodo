@@ -1,6 +1,8 @@
 <?= $this->Form->create('post', ['class' => 'form-signin']) ?>
 
-<h1 class="h3 mb-3 font-weight-normal">Área restrita</h1>
+<h1 class="h3 mb-3 font-weight-normal">Solutudo</h1>
+
+<?= $this->Flash->render(); ?>
 
 <div class="form-group">
     <label>Usuário</label>
