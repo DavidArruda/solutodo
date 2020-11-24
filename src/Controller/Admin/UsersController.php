@@ -116,8 +116,9 @@ class UsersController extends AppController
             if ($user) {
                 $this->Auth->setUser($user);
                 return $this->redirect($this->Auth->redirectUrl());
+            } else {
+                $this->Flash->danger(__('Usuário ou senha ínvalido, tente novamente'));
             }
-            $this->Flash->error(__('Usuário ou senha ínvalido, tente novamente'));
         }
     }
 
@@ -126,6 +127,7 @@ class UsersController extends AppController
      */
     public function logout()
     {
+        $this->Flash->success(__('Desconectado'));
         return $this->redirect($this->Auth->logout());
     }
 }
