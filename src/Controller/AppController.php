@@ -50,9 +50,9 @@ class AppController extends Controller
             ],
             'logoutRedirect' => [
                 'controller' => 'users',
-                'action' => 'login',
-                'home'
-            ]
+                'action' => 'login'
+            ],
+            'authError' => false
         ]);
 
         /*
