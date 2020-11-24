@@ -62,4 +62,20 @@ class AppController extends Controller
         //$this->loadComponent('Security');
         //$this->loadComponent('Csrf');
     }
+
+    public function beforeRender(Event $event)
+    {
+        $prefix = null;
+        if($this->request->getParam(['prefix']) !== null ){// verifica se o prefixo é diferente de null
+            $prefix = $this->request->getParam(['prefix']);//recupera o prefixo 'admin'
+        }
+
+         if($prefix == 'admin') // verifica se o prefixo é igual a admin
+        {
+            //Verifica se action é igual a login
+            if(($this->request->getParam(['action']) !== null ) AND ($this->request->getParam(['action']) == 'login')){
+                $this->viewBuilder()->setLayout('login');//carrega o layout de login
+            }
+        }
+    }
 }
