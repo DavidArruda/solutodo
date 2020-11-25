@@ -21,6 +21,10 @@ class UsersController extends AppController
      */
     public function index()
     {
+        $this->paginate = [ //limita em 20 registros por página
+            'limit' => 20
+        ];
+
         $users = $this->paginate($this->Users);
 
         $this->set(compact('users'));
