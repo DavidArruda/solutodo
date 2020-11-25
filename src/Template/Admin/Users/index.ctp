@@ -2,13 +2,11 @@
     <div class="mr-auto p-2">
         <h2 class="display-4 titulo">Listar Usuários</h2>
     </div>
-    <a href="cadastrar.html">
-        <div class="p-2">
-            <button class="btn btn-outline-success btn-sm">
-                Cadastrar
-            </button>
-        </div>
-    </a>
+    <div class="p-2">
+        <?= $this->Html->link(__('Cadastrar'), ['controller' => 'users', 'action' => 'add'],
+        ['class' => 'btn btn-outline-success btn-sm']);
+        ?>
+    </div>
 </div>
 
 <?= $this->Flash->render() ?>
@@ -52,7 +50,7 @@
 
 <div class="users index large-9 medium-8 columns content">
     <h3><?= __('Users') ?></h3>
-    
+
     <div class="paginator">
         <ul class="pagination">
             <?= $this->Paginator->first('<< ' . __('first')) ?>
