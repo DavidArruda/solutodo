@@ -3,8 +3,11 @@
         <h2 class="display-4 titulo">Listar Usuários</h2>
     </div>
     <div class="p-2">
-        <?= $this->Html->link(__('Cadastrar'), ['controller' => 'users', 'action' => 'add'],
-        ['class' => 'btn btn-outline-success btn-sm']);
+        <?= $this->Html->link(
+            __('Cadastrar'),
+            ['controller' => 'users', 'action' => 'add'],
+            ['class' => 'btn btn-outline-success btn-sm']
+        );
         ?>
     </div>
 </div>
@@ -16,6 +19,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <th>USUÁRIO</th>
                 <th>NOME</th>
                 <th>SOBRENOME</th>
                 <th>DATA ADMISSÃO</th>
@@ -35,7 +39,6 @@
                     <td><?= h($user->date_admission) ?></td>
                     <td><?= h($user->created) ?></td>
                     <td><?= h($user->modified) ?></td>
-                    <th class="text-center">Ações</th>
                     <td class="actions">
                         <?= $this->Html->link(__('View'), ['action' => 'view', $user->id]) ?>
                         <?= $this->Html->link(__('Edit'), ['action' => 'edit', $user->id]) ?>
@@ -46,19 +49,7 @@
         </tbody>
     </table>
 
-</div>
+    <!--inclui paginação criada no element -->
+    <?= $this->element('pagination'); ?>
 
-<div class="users index large-9 medium-8 columns content">
-    <h3><?= __('Users') ?></h3>
-
-    <div class="paginator">
-        <ul class="pagination">
-            <?= $this->Paginator->first('<< ' . __('first')) ?>
-            <?= $this->Paginator->prev('< ' . __('previous')) ?>
-            <?= $this->Paginator->numbers() ?>
-            <?= $this->Paginator->next(__('next') . ' >') ?>
-            <?= $this->Paginator->last(__('last') . ' >>') ?>
-        </ul>
-        <p><?= $this->Paginator->counter(['format' => __('Page {{page}} of {{pages}}, showing {{current}} record(s) out of {{count}} total')]) ?></p>
-    </div>
 </div>
