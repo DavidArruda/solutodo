@@ -215,3 +215,5 @@ Type::build('timestamp')
 if (Configure::read('debug')) {
     Plugin::load('DebugKit', ['bootstrap' => true]);
 }
+
+Cake\I18n\FrozenTime::setToStringFormat('dd/MM/yyyy HH:mm:ss');
